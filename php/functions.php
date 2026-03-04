@@ -479,7 +479,7 @@ function saml_acs() {
 		wp_set_auth_cookie($user_id, $rememberme);
 
 		$secure = is_ssl();
-		setcookie(SAML_LOGIN_COOKIE, 1, time() + MONTH_IN_SECONDS, SITECOOKIEPATH, COOKIE_DOMAIN, $secure, true, false); // allow JS to read this
+		setcookie(SAML_LOGIN_COOKIE, 1, time() + MONTH_IN_SECONDS, SITECOOKIEPATH, COOKIE_DOMAIN, $secure, true);
 		setcookie(SAML_NAMEID_COOKIE, $auth->getNameId(), time() + MONTH_IN_SECONDS, SITECOOKIEPATH, COOKIE_DOMAIN, $secure, true);
 		setcookie(SAML_SESSIONINDEX_COOKIE, $auth->getSessionIndex(), time() + MONTH_IN_SECONDS, SITECOOKIEPATH, COOKIE_DOMAIN, $secure, true);
 		setcookie(SAML_NAMEID_FORMAT_COOKIE, $auth->getNameIdFormat(), time() + MONTH_IN_SECONDS, SITECOOKIEPATH, COOKIE_DOMAIN, $secure, true);
